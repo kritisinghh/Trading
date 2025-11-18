@@ -1,31 +1,31 @@
-# Trading
+# 📈 RL Stock Trading Demo
 
-Reinforcement Learning Stock Trading (PPO + Custom Gym Environment)
-This project demonstrates how a Reinforcement Learning (RL) agent can learn to trade a stock using a custom Gym environment and PPO (Proximal Policy Optimization). The goal is to understand RL concepts and trading logic, not real-world profitability.
+This project provides a complete environment for developing and testing Reinforcement Learning (RL) agents for single-asset stock trading. It includes a custom OpenAI Gym environment, an interactive manual trading interface, and a PPO agent trainer using Stable-Baselines3.
 
-# Project Highlights
-1. Manual Trading Simulator
-A simple interface where the user can:
-Buy
-Sell
-Hold
-Auto-advance
-It displays price charts, SMA indicators, portfolio value, and trade logs.
+---
 
-3. Custom Gym Trading Environment
-The RL environment includes:
-State: last 30 prices + cash + position
-Actions: Buy (1), Hold (0), Sell (2)
-Reward: change in portfolio value
-Done: end of dataset
+## ✨ Features
 
-5. PPO Agent Training
-A PPO agent is trained on AAPL (2018–2024) data using Stable-Baselines3 and learns trading patterns based on rewards.
+* **Custom Gym Environment (`StockTradingEnv`):** Designed for RL, featuring a continuous action space (buy/sell fraction) and observation space (price window + portfolio state).
+* **Interactive Demo (`ManualAgentTrader`):** A Jupyter/Colab interface for manual, step-by-step trading with real-time visualization (price charts, portfolio history).
+* **RL Agent Training:** Built-in buttons to **Train** and **Run** a **PPO** (Proximal Policy Optimization) agent directly within the notebook.
+* **Real-World Data:** Uses `yfinance` to pull stock data (default: AAPL).
+* **Baseline Simulation:** Generates a random trading agent's performance log for comparison.
 
-# Tech Used
-Python, NumPy, Pandas
-yfinance
-Gym
-Stable-Baselines3 (PPO)
-Matplotlib
-ipywidgets
+---
+
+## 🚀 Setup & Installation
+
+This project is best run in a **Google Colab** environment.
+
+### Dependencies
+
+Run the following commands in your notebook environment:
+
+```bash
+# Core Dependencies
+!pip install --quiet yfinance pandas numpy matplotlib ipywidgets ta
+
+# Reinforcement Learning Dependencies (Required for Agent features)
+!pip install stable-baselines3==2.0.0 gym==0.26.2
+!pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cpu](https://download.pytorch.org/whl/cpu)
