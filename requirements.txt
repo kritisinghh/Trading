@@ -1,0 +1,8 @@
+gym==0.26.3
+numpy
+pandas
+ta
+yfinance
+stable-baselines3[extra]==2.0.0
+matplotlib
+scikit-learn
